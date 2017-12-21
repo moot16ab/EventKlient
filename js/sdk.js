@@ -38,6 +38,19 @@ const SDK = {
     },
 
     Event: {
+        opretEvent: function(eventNavn, placering, dato, pris, beskrivelse, callback){
+            if(eventNavn && placering && dato && pris && beskrivelse){
+                var id = new Date().getTime();
+                var bruger = JSON.parse(sessionStorage.getItem('bruger'));
+                data.events.push({idEvent: id, eventName: eventNavn, owner: bruger.idStudent, location: placering, price: pris, eventDate: dato.toString(), description: beskrivelse, isDeletede: 0, deltagere: [bruger]});
+                console.log(data.events)
+                callback(null, data)
+            } else{
+                var err = "Oprettelsen mislykkedes"
+                callback(err)
+            }
+        },
+
         hentEvents: function (callback) {
             callback(null, data.events)
         },
