@@ -10,5 +10,12 @@ const SDK = {
             var err = "Ugyldigt login";
             callback(err)
         }
+    },
+
+    logout: function () {
+        sessionStorage.removeItem("token");
+        sessionStorage.removeItem("bruger");
+
+        window.location.href = "index.html";
     }
 }
