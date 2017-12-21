@@ -8,53 +8,53 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="#">DØK</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="events.html">Alle events</a>
-                <a class="nav-item nav-link" href="tilmeldteEvents.html">Tilmeldte events</a>
-                <a class="nav-item nav-link active" href="#">Opret event</a>
-                <a class="nav-item nav-link" href="#" onclick="SDK.logout()">Log ud</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">DØK</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="events.html">Alle events</a>
+                    <a class="nav-item nav-link" href="tilmeldteEvents.html">Tilmeldte events</a>
+                    <a class="nav-item nav-link active" href="#">Opret event</a>
+                    <a class="nav-item nav-link" href="#" onclick="SDK.Bruger.logout()">Log ud</a>
+                </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<div class="container">
-    <h1>Opret et event</h1>
-    <form>
-        <div class="form-group">
-            <label for="inputEventNavn">Navn for event</label>
-            <input type="text" class="form-control" id="inputEventNavn">
-        </div>
-        <div class="form-group">
-            <label for="inputPlacering">Placering</label>
-            <input type="text" class="form-control" id="inputPlacering">
-        </div>
-        <div class="form-group">
-            <label for="inputDato">Dato</label>
-            <input type="date" class="form-control" id="inputDato">
-        </div>
-        <div class="form-group">
-            <label for="inputPris">Pris</label>
-            <div class="input-group">
-                <span class="input-group-addon">DKK</span>
-                <input type="number" class="form-control" id="inputPris" min="0">
-                <span class="input-group-addon">,00</span>
+    <div class="container">
+        <h1>Opret et event</h1>
+        <form>
+            <div class="form-group">
+                <label for="inputEventNavn">Navn for event</label>
+                <input type="text" class="form-control" id="inputEventNavn">
             </div>
-        </div>
-        <div class="form-group">
-            <label for="inputBeskrivelse">Beskrivelse</label>
-            <input type="text" class="form-control" id="inputBeskrivelse">
-        </div>
-        <button type="submit" class="btn btn-primary opret-bruger-knap">Opret bruger</button>
-    </form>
-</div>
+            <div class="form-group">
+                <label for="inputEventPlacering">Placering</label>
+                <input type="text" class="form-control" id="inputEventPlacering">
+            </div>
+            <div class="form-group">
+                <label for="inputEventDato">Dato</label>
+                <input type="date" class="form-control" id="inputEventDato">
+            </div>
+            <div class="form-group">
+                <label for="inputEventPris">Pris</label>
+                <div class="input-group">
+                    <span class="input-group-addon">DKK</span>
+                    <input type="number" class="form-control" id="inputEventPris" min="0">
+                    <span class="input-group-addon">,00</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEventBeskrivelse">Beskrivelse</label>
+                <input type="text" class="form-control" id="inputEventBeskrivelse">
+            </div>
+            <button type="submit" class="btn btn-primary opret-bruger-knap">Opret bruger</button>
+        </form>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

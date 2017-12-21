@@ -3,7 +3,7 @@ $(document).ready(function(){
         var email = $("#inputEmail").val();
         var password = $("#inputPassword").val();
 
-        SDK.login(email, password, function (err, data) {
+        SDK.Bruger.login(email, password, function (err, data) {
             if(err){
                 alert(err)
             } else{
