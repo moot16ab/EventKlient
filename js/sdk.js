@@ -38,9 +38,9 @@ const SDK = {
     },
 
     Event: {
-        getEvents: function(callback) {
+        hentEvents: function(callback) {
             callback(null,data.events)
-        }
+        },
     }
 
 }

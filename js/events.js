@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    SDK.Event.getEvents(function(err, events){
+    SDK.Event.hentEvents(function(err, events){
         if(err) console.log(err);
         var $eventTable = $('#eventTable');
 
@@ -8,12 +8,15 @@ $(document).ready(function () {
             $eventTable.append(
                 "<tr>" +
                 "<td>" + event.eventName + "</td>" +
-                "<td>" + event.owner + "</td>" +
                 "<td>" + event.location + "</td>" +
                 "<td>" + event.price + "</td>" +
                 "<td>" + event.eventDate + "</td>" +
                 "<td>" + event.description + "</td>" +
+                "<td><button class='btn btn-success'>Deltag</button></td>" +
+                "<td><button class='btn btn-primary' onclick=''>Vis deltagere</button></td>" +
                 "</tr>");
         });
+
+
     });
 })
