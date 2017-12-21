@@ -1,5 +1,11 @@
 const SDK = {
 
+    resetData: function(callback){
+      sessionStorage.clear();
+      sessionStorage.setItem("data", JSON.stringify(data))
+        callback(null, "");
+    },
+
     Bruger: {
         opretBruger: function(fornavn, efternavn, email, password, callback){
             if(fornavn && efternavn && email && password){
@@ -14,6 +20,13 @@ const SDK = {
         },
 
         login: function(email, password, callback){
+            var storage = sessionStorage.getItem('data');
+            if(storage) {
+                var opdateretData = data.brugere.concat(storage.brugere)
+                opdateretData = data.events.concat(storage.events)
+                sessionStorage.setItem('data', JSON.stringify(opdateretData));
+            }
+
             var user = null;
             function isEmail(bruger) {
                 if(bruger.email === email) user = bruger;
