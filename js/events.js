@@ -12,10 +12,20 @@ $(document).ready(function () {
                 "<td>" + event.price + "</td>" +
                 "<td>" + event.eventDate + "</td>" +
                 "<td>" + event.description + "</td>" +
-                "<td><button class='btn btn-success'>Deltag</button></td>" +
-                "<td><button class='btn btn-primary' onclick=''>Vis deltagere</button></td>" +
+                "<td><button class='btn btn-success deltag-knap' data-event='" + event.idEvent + "'>Deltag</button></td>" +
+                "<td><button class='btn btn-primary deltagere-knap' data-event='" + event.idEvent + "'>Vis deltagere</button></td>" +
                 "</tr>");
         });
+
+        $(".deltag-knap").click(function () {
+            var e = this;
+            console.log(e.dataset.event)
+        })
+
+        $(".deltagere-knap").click(function () {
+            var e = this;
+            SDK.Event.visDeltagere(e.dataset.event)
+        })
 
 
     });
