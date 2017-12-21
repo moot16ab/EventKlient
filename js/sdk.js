@@ -42,13 +42,51 @@ const SDK = {
             if(eventNavn && placering && dato && pris && beskrivelse){
                 var id = new Date().getTime();
                 var bruger = JSON.parse(sessionStorage.getItem('bruger'));
-                data.events.push({idEvent: id, eventName: eventNavn, owner: bruger.idStudent, location: placering, price: pris, eventDate: dato.toString(), description: beskrivelse, isDeletede: 0, deltagere: [bruger]});
-                console.log(data.events)
+                data.events.push({idEvent: id, eventName: eventNavn, owner: bruger.idStudent, location: placering, price: pris, eventDate: dato, description: beskrivelse, isDeletede: 0, deltagere: [bruger]});
                 callback(null, data)
             } else{
                 var err = "Oprettelsen mislykkedes"
                 callback(err)
             }
+        },
+
+        redigerEvent: function(idEvent, eventNavn, placering, dato, pris, beskrivelse, callback){
+            if(idEvent && eventNavn != "" && placering != "" && dato != "" && pris != null && beskrivelse != ""){
+                function isId(event){
+                    return event.idEvent == idEvent
+                }
+                var eventIndex = data.events.findIndex(isId)
+                console.log(eventIndex)
+                data.events[eventIndex].eventName = eventNavn;
+                data.events[eventIndex].location = placering;
+                data.events[eventIndex].price = pris;
+                data.events[eventIndex].eventDate = dato;
+                data.events[eventIndex].description = beskrivelse;
+                //data.events.push({idEvent: id, eventName: eventNavn, owner: bruger.idStudent, location: placering, price: pris, eventDate: dato, description: beskrivelse, isDeletede: 0, deltagere: [bruger]});
+                console.log(data.events[0])
+                callback(null, data);
+            } else{
+                var err = "Redigering mislykkedes"
+                callback(err)
+            }
+        },
+
+        sletEvent: function(idEvent, callback){
+            function isId(event){
+                return event.idEvent == idEvent
+            }
+            var eventIndex = data.events.findIndex(isId)
+            data.events.splice(eventIndex, 1)
+            console.log(data.events.splice(data.events))
+            callback(null, data)
+        },
+
+        hentEvent: function (idEvent, callback){
+            function isId(event){
+                return event.idEvent == idEvent
+            }
+            var eventIndex = data.events.findIndex(isId)
+            callback(null, data.events[eventIndex])
         },
 
         hentEvents: function (callback) {
