@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    SDK.loadData(function (err, data) {
+        if(err) {
+            alert(err)
+        } else{
+        }
+    })
+
     $("#opret-event-knap").on("click", function(){
         var eventNavn = $("#inputEventNavn").val();
         var placering = $("#inputEventPlacering").val();
@@ -11,8 +18,14 @@ $(document).ready(function(){
             if(err){
                 alert(err)
             } else{
-                alert("Begivenhed oprettet!")
-                window.location.href = "events.html";
+                SDK.saveData(function (err, data) {
+                    if(err) {
+                        alert(err)
+                    } else {
+                        alert("Begivenhed oprettet!")
+                        window.location.href = "events.html";
+                    }
+                })
             }
         })
     })

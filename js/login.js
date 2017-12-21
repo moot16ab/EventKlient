@@ -1,4 +1,11 @@
 $(document).ready(function(){
+    SDK.loadData(function (err, data) {
+        if(err) {
+            alert(err)
+        } else{
+        }
+    })
+
     $("#log-ind-knap").on("click", function(){
         var email = $("#inputEmail").val();
         var password = $("#inputPassword").val();
