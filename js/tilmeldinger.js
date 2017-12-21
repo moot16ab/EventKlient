@@ -28,7 +28,14 @@ $(document).ready(function () {
                     var e = this;
                     if (e.dataset.owner == bruger.idStudent) {
                         sessionStorage.setItem("valgteEvent", e.dataset.event);
-                        window.location.href = "redigerEvent.html";
+                        SDK.saveData(function (err, data) {
+                            if (err) {
+                                alert(err)
+                            } else {
+                                window.location.href = "redigerEvent.html";
+
+                            }
+                        })
                     } else {
                         alert("Du kan ikke redigere eller slette en anden brugers event.")
                     }

@@ -96,7 +96,6 @@ const SDK = {
                 data.events[eventIndex].price = pris;
                 data.events[eventIndex].eventDate = dato;
                 data.events[eventIndex].description = beskrivelse;
-                //data.events.push({idEvent: id, eventName: eventNavn, owner: bruger.idStudent, location: placering, price: pris, eventDate: dato, description: beskrivelse, isDeletede: 0, deltagere: [bruger]});
                 callback(null, data);
             } else{
                 var err = "Redigering mislykkedes"
