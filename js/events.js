@@ -19,7 +19,7 @@ $(document).ready(function () {
 
         $(".deltag-knap").click(function () {
             var e = this;
-            console.log(e.dataset.event)
+            SDK.Event.deltag(e.dataset.event)
         })
 
         $(".deltagere-knap").click(function () {

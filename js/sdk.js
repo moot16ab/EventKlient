@@ -42,9 +42,21 @@ const SDK = {
             callback(null, data.events)
         },
 
+        deltag: function (idEvent) {
+            var valgteEvent = null;
+            function isId(event) {
+                if (event.idEvent == idEvent) valgteEvent = event;
+            }
+
+            data.events.find(isId);
+            var bruger = JSON.parse(sessionStorage.getItem('bruger'));
+            valgteEvent.deltagere.push(bruger)
+            console.log(valgteEvent.deltagere)
+            alert("Du er blevet tilmeldt \"" + valgteEvent.eventName + "\"");
+        },
+
         visDeltagere: function (idEvent) {
             var valgteEvent = null;
-
             function isId(event) {
                 if (event.idEvent == idEvent) valgteEvent = event;
             }
