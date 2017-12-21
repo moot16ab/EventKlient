@@ -35,6 +35,12 @@ const SDK = {
 
             window.location.href = "index.html";
         }
+    },
+
+    Event: {
+        getEvents: function(callback) {
+            callback(null,data.events)
+        }
     }
 
 }
